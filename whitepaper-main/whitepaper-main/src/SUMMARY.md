@@ -1,6 +1,6 @@
-# Nois Network
+# Noir Network
 
-[Nois Network](title.md)
+[Noir Network](title.md)
 
 - [Abstract](./abstract.md)
 - [The Strawman Approach](./the_strawman_approach.md)

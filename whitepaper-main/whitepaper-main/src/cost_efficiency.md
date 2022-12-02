@@ -1,20 +1,20 @@
 # Cost Efficiency
 
-Nois uses highly efficient Tendermint, IBC and CosmWasm technology to provide a cost-efficient solution to users.
+Noir uses highly efficient  blockchain technology to provide cost-efficent solutions to users.
 
 ## Verify on each app chain
 
-An alternative approach to verifying the beacon on one chain and then distributing it across chains would be to verify the beacon once per app chain, i.e. have a Terrand-like instance on Terra, Juno, Tgrade, …. The bot network would then need to submit the beacon to each chain. This would remove the need for a Nois chain and IBC relayers. It could also remove the time between publication and callback.
+The beacon could be verified once per app chain as an alternative to being verified on one chain and then distributed across chains. The beacon would then need to be submitted to each chain by the bot network. A Noir chain and ETH relays would no longer be required as a result. The interval between publication and callback might also be eliminated.
 
 However, drand verification consumes a lot of gas and doing that once per chain is potentially inefficient. When blockspace is limited, the beacon submission transaction might not get committed for a long time.
 
-There are pros and cons on both sides. When thinking about hundreds of connected app chains, the deduplication of the verification feels right. With IBC queries upcoming, [our state becomes your state](https://twitter.com/hdevalence/status/1555256686641786882) and thus it makes sense to have one "randomness" chain accessible from all chain very easily.
+There are pros and cons on both sides. When thinking about hundreds of connected app chains, the deduplication of the verification feels right. With ETH queries upcoming, our state becomes your state and thus it makes sense to have one "randomness" chain accessible from all chain very easily.
 
 ## The app chain model
 
-A drand verifier that is accessible via IBC can be implemented on an existing chain with CosmWasm. This would be easier to start with and would not require a new token. However, going for a custom app chain has the following motivation:
+A drand verifier that is accessible via ETH can be implemented on an existing chain with [Ethereum](https://ewasm.readthedocs.io/en/mkdocs/). This would be easier to start with and would not require a new token. However, going for a custom app chain has the following motivation:
 
-- Cosmos is an ecosystem of app specific chains where creating one chain is relatively easy.
+-  is an ecosystem of app specific chains where creating one chain is relatively easy.
   The mentality in the ecosystem is to have many chains that are independent and interconnected.
   The tooling and people are ready for many chains.
 - In a world with competing app chains that host our users, running on one of those chains makes us biased towards this chain.

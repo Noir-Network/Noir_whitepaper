@@ -1,6 +1,6 @@
 # Further Work
 
-The solution above explains what we can do with technology available today. But we'll not stop there. The next steps might be the following (unsorted).
+The answer above demonstrates what is possible with the technology of the present. However, we won't stop there. The following could be the course of action: (unsorted).
 
 ## IBC Queries
 
@@ -8,7 +8,9 @@ We'll closely follow the development of IBC queries, which is a technology we as
 
 ## Alternative Entropy Sources
 
-We love what drand and the League of Entropy brought to the internet, which is nothing less than the first decentralized entropy source. But choice is important. Some applications may wish to sacrifice some of the security properties in order to get faster and cheaper randomness. Some users might demand governance voting for drand [MPC] participants. The options are to be explored, but the network will be designed for multiple sources.
+We adore the first decentralised entropy source that Drand and the League of Entropy delivered to the internet. Choice, though, is crucial. In order to obtain faster and less expensive randomization, certain applications might be willing to give up some of the security features. Some users might demand that district [MPC] participants vote on governance. Although the possibilities will be investigated, the network will be built for numerous sources.
+ 
+
 
 ## Internalizing randomness generation
 
@@ -16,8 +18,8 @@ The node operators of the Nois Network could integrate randomness generation int
 
 ## More features
 
-Drand is releasing a timed encryption feature that is using the drand randomness
-as a basis. Integrating that with Nois Network would make sense and offer the
-first timed encryption feature on the Cosmos ecosystem.
+The drand randomness is the foundation for the timed encryption feature that drand is providing. It would make sense to incorporate it with the Noir Network and provide the first timed encryption function on the Ethereum ecosystem.
+ 
+ 
 
 [mpc]: https://en.wikipedia.org/wiki/Secure_multi-party_computation

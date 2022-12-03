@@ -16,13 +16,13 @@ The randomness must be regarded as public once this "publish time" has passed. A
 
 The time between beacon publishing an the callback consists of the following components:
 
-- **Nois Bots Registration:** Through a variety of communication protocols, bots should observe the Drake gossip network. They should create a transaction, sign it, and send it to the Noisy mempool as soon as a fresh round is discovered. Keep in mind that only the bot with the fastest submission wins. This should be possible in under a second when connected well. Anyone can contribute to this layer because it has no restrictions on participation. Operators of registered bots get paid for their efforts.
+- **Noir Bots Registration:** Through a variety of communication protocols, bots should observe the Drake gossip network. They should create a transaction, sign it, and send it to the Noisy mempool as soon as a fresh round is discovered. Keep in mind that only the bot with the fastest submission wins. This should be possible in under a second when connected well. Anyone can contribute to this layer because it has no restrictions on participation. Operators of registered bots get paid for their efforts.
  
  
 - **Block inclusion time:** is as follows: the chain should make sure the beacon is included in a block as soon as possible after it is in the mempool. This should take up to 10 seconds with 5-second block durations and an inclusion in the first or second block. The same transaction transmits IBC messages and creates open jobs. The block is accomplished in a fraction of a second.
  
  
--**The IBC relaying:** The message is retrieved from the Nois chain and forwarded to the destination chain by an IBC relayer. This is dependent on properly setting up and interconnecting relayers, as well as on block space being available on the destination chain. The relayer should pay a transaction fee that is accepted by all validators in order to be included as soon as practicable. We don't get assurances that we'll be included right away, though, when there is a lot of traffic. So a reasonable estimate would be 5 to 20 seconds.
+-**The IBC relaying:** The message is retrieved from the Noir chain and forwarded to the destination chain by an IBC relayer. This is dependent on properly setting up and interconnecting relayers, as well as on block space being available on the destination chain. The relayer should pay a transaction fee that is accepted by all validators in order to be included as soon as practicable. We don't get assurances that we'll be included right away, though, when there is a lot of traffic. So a reasonable estimate would be 5 to 20 seconds.
 - **Acknowledgement:** An IBC acknowledgement is sent to Noir, but this is nothing the contract needs to wait for.
 
 Once those steps are done, the callback is executed within 30 seconds of publishing. On a well configured network, and depending on the block time, average timings can be much faster though.

@@ -28,7 +28,7 @@ In an ecosystem that is getting ready for thousands of separate and connected bl
 ## Architecture
 
 ![Noir network (1)](https://user-images.githubusercontent.com/119654246/205434748-98454a23-52cd-4dfd-8432-f8741e8603bb.png)
-Multiple actors are involved in the Nois system:
+Multiple actors are involved in the Noir system:
 
 - Noir validators: these are the nodes that create and validate blocks on our
   chain. They are responsible for executing the transactions and run a consensus
@@ -47,9 +47,9 @@ Multiple actors are involved in the Nois system:
 
 The following steps are taken to get the randomness:
 
-1. A contract on a EthereumWasm-enabled chain sends a message to a Nois proxy contract on the same chain.
+1. A contract on a EthereumWasm-enabled chain sends a message to a Noir proxy contract on the same chain.
 2. The proxy contract sends an IBC message to its counter-part on the Noir Network, where the job is put in the queue.
-3. Once the drand beacon of the correct round is released, Nois bots send it to the Nois smart contract for verification, as a transaction.
+3. Once the drand beacon of the correct round is released, Noir bots send it to the Noir smart contract for verification, as a transaction.
 4. After successful verification, the pending jobs for the round are processed. For every matching job, an IBC response with the beacon is sent, thanks to the IBC relayers.
 5. The proxy contract receives the beacon and sends a callback to the original contract.
 

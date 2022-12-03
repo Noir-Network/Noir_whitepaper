@@ -30,25 +30,25 @@ In an ecosystem that is getting ready for thousands of separate and connected bl
 ![Noir network (1)](https://user-images.githubusercontent.com/119654246/205434748-98454a23-52cd-4dfd-8432-f8741e8603bb.png)
 Multiple actors are involved in the Nois system:
 
-- Nois validators: these are the nodes that create and validate blocks on our
+- Noir validators: these are the nodes that create and validate blocks on our
   chain. They are responsible for executing the transactions and run a consensus
   on the output.
-- Nois bots are responsible for fetching the randomness from the drand network
-  and submit it to the Nois Oracle contract that verifies it.
-- Nois Oracle contract contains the logic to verify a drand randomness, but also
-  to incentivize the Nois bots and is the recipient of any IBC messages made on
+- Noir bots are responsible for fetching the randomness from the drand network
+  and submit it to the Noir Oracle contract that verifies it.
+- Noir Oracle contract contains the logic to verify a drand randomness, but also
+  to incentivize the Noir bots and is the recipient of any IBC messages made on
   other chains.
-- Nois proxy contract lives on any end user chain (e.g. Juno, Stargaze, Osmosis) and is
+- Noir proxy contract lives on any end user chain (e.g. Juno, Stargaze, Osmosis) and is
   the main entry point for users to fetch randomness from.
-- IBC relayers are responsible for relaying the randomness from the Nois Oracle
+- IBC relayers are responsible for relaying the randomness from the Noir Oracle
   contract to the Proxy contract.
 
 ## Workflow
 
 The following steps are taken to get the randomness:
 
-1. A contract on a CosmWasm-enabled chain sends a message to a Nois proxy contract on the same chain.
-2. The proxy contract sends an IBC message to its counter-part on the Nois Network, where the job is put in the queue.
+1. A contract on a EthereumWasm-enabled chain sends a message to a Nois proxy contract on the same chain.
+2. The proxy contract sends an IBC message to its counter-part on the Noir Network, where the job is put in the queue.
 3. Once the drand beacon of the correct round is released, Nois bots send it to the Nois smart contract for verification, as a transaction.
 4. After successful verification, the pending jobs for the round are processed. For every matching job, an IBC response with the beacon is sent, thanks to the IBC relayers.
 5. The proxy contract receives the beacon and sends a callback to the original contract.

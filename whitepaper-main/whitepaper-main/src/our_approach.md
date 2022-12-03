@@ -27,7 +27,7 @@ In an ecosystem that is getting ready for thousands of separate and connected bl
 
 ## Architecture
 
-![Diagram](img/diagram.png "Diagram")
+![Diagram](img/Noir network.svg "Diagram")
 Multiple actors are involved in the Nois system:
 
 - Nois validators: these are the nodes that create and validate blocks on our

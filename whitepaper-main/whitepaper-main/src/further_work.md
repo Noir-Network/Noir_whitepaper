@@ -14,7 +14,7 @@ We adore the first decentralised entropy source that Drand and the League of Ent
 
 ## Internalizing randomness generation
 
-The node operators of the Noir Network could integrate randomness generation into their own operations. There has been work to [integrate random beacons into Tendermint](https://medium.com/@dgaminghub/arcade-tendermint-hack-with-built-in-threshold-bls-random-beacon-for-applications-a51eafb77f53) that could be explored. But also a second process that runs along with the validator node would be an option.
+The node operators of the Noir Network could integrate randomness generation into their own operations. There has been work to integrate random beacons into Tendermint that could be explored. But also a second process that runs along with the validator node would be an option.
 
 ## More features
 

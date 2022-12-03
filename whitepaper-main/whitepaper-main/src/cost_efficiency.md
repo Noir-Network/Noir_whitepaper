@@ -14,22 +14,21 @@ There are pros and cons on both sides. When thinking about hundreds of connected
 
 A drand verifier that is accessible via ETH can be implemented on an existing chain with [Ethereum](https://ewasm.readthedocs.io/en/mkdocs/). This would be easier to start with and would not require a new token. However, going for a custom app chain has the following motivation:
 
--  is an ecosystem of app specific chains where creating one chain is relatively easy.
-  The mentality in the ecosystem is to have many chains that are independent and interconnected.
-  The tooling and people are ready for many chains.
-- In a world with competing app chains that host our users, running on one of those chains makes us biased towards this chain.
-  Being neutral regarding chains is very helpful in politics.
+- In the ecosystem of app-specific chains on Ethereum, building a chain is comparatively simple.
+The ecosystem functions best when there are numerous chains that are both independent and connected.
+For numerous chains, the tooling and personnel are prepared.
+- Running on one of the competing app chains renders us biassed in favour of that chain in a world where those chains host our consumers.
+Being chain-neutral is tremendously valuable in politics.
 - The randomness chain would not halt if the smart contract chain halts.
-- The ability to create overlapping validator and drand MPC sets is a way to incentivise drand node operators and get new players into Cosmos.
+- The ability to create overlapping validator and drand MPC sets is a way to incentivise drand node operators and get new players into Ethereum.
 - The following optimizations are possible:
-  1. The drand verification contract is 550 KB large. Terrand had to split the code in two contracts to deploy it to Terra.
+  1. The drand verification contract is 550 KB large.
      A custom chain can allow larger contract sizes and we now have the logic
      implemented in one contract.
   2. The verification consumes significant block space and may get expensive on other general purpose chains.
-  3. CosmWasm allows pinning contracts. Those contracts are kept in memory and are loaded and executed faster.
-     We can utilize this feature on a custom chain, and we can also reduce the
-     cost of verifying the beacons.
-  4. CosmWasm has a somewhat unknown cronjob feature that allows governance to run contract execution in every block.
+  3. EthereumWasm can be used to pin contracts.These contracts are loaded and performed more quickly since they are stored in memory.This functionality can be applied to a unique chain, and it also lowers the price of beacon verification.
+ 
+  4. EthereumWasm has a somewhat unknown cronjob feature that allows governance to run contract execution in every block.
      That’s useful to e.g. process queues.
   5. We can use chain governance to upgrade the contract, which is more transparent and safer than multisig upgradability.
   6. Due to permissioned contract uploads, the use of a Wasm runtime backend with a slower but stronger optimizer becomes possible,

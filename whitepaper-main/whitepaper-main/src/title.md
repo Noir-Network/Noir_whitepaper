@@ -1,4 +1,4 @@
-# Nois Network
+# Noir Network
 
 Noir Network aims to bring randomness  to the Ethereum ecosystem by providing a safe and secure entropy source and distributing randomness in the form of random beacons.
 

@@ -1,4 +1,4 @@
-# Nois Network Whitepaper
+# Noir Network Whitepaper
 
 ## Building
 

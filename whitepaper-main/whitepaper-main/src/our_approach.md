@@ -1,19 +1,15 @@
 # Our Approach
 
-Nois Network aims to provide a safe and secure solution native to the IBC world and to provide the best possible user experience for a wide range of applications.
+Noir Network aims to provide a safe and secure solution native to the IBC world and to provide the best possible user experience for a wide range of applications.
 
-In contrast to other consensus algorithms, Tendermint-based blockchains do not
-need or provide randomness at block production layer. Therefore, for our first iteration,
-we are building our stack entirely on the application level of the chain (i.e.
-as a collection of smart contracts and offchain bots). This design decision
-makes it really easy for developers to use our technology since randomness can
-be consumed onchain only via the usage of a simple library.
+Tendermint-based blockchains do not require or supply randomization at the block production layer, in contrast to other consensus methods. Consequently, for our initial iteration, we are totally constructing our stack at the chain's application level (i.e., as a collection of smart contracts and off-chain bots). Because of this design choice, randomness can only be consumed on chain through the use of a simple library, making it incredibly simple for developers to use our technology.
+ 
+ 
+Noir will employ random beacons created by the random network in its initial implementation. This network is supported by a group of players who use multi-party computation to generate unpredictability. There is a bijective mapping between the random round and the wall clock time because each unpredictability is tied to a round and provided periodically. The randomness is based on a BLS threshold signature structure, which generates numbers that are unpredictable and cannot be changed by any of the participants in the randomness. The [Legue of Entropy] [loe], which created the dread mainnet, has been using it in production for more than two years. For instance, Filecoin uses drand for its storage proofs and block generation.
+ 
+ 
 
-In the first iteration, Nois will use random beacons produced by the [drand] network, which is powered by a consortium of participants that generate randomness using multi-party computation. Each randomness is associated with a round and is delivered periodically, i.e. there is a bijective mapping between the drand round and the wallclock time. The randomness is based on a BLS threshold signatures schema, which produces unpredictable values that cannot be manipulated by any of the drand participants. The drand mainnet is instantiated by the [Legue of Entropy][loe], which has been operating it in production for more than two years. For example, Filecoin relies on drand for block production and its storage proofs.
 
-Drand random beacons can be submitted to blockchains that perform BLS signature verification. This way, we can build a random oracle that securely brings randomness on chain. This method was [described and proven in 2020 for CosmWasm](https://medium.com/@simonwarta/when-your-blockchain-needs-to-roll-the-dice-ed9da121f590).
-A few months later, this proof of concept was turned into production by [Terrand](https://docs.terrand.dev/).
-BLS verification is a computationally heavy operation, but leveraging the strength of the Rust optimizer and Wasm's near native execution speed, drand beacons could be verified for less than $3 in gas fees on Terra.
 
 The next step in the evolution is to make drand beacons easily accessible by as many dapps as possible in a way that is easy to use and affordable. In an ideal world, a dapp developer would just do something like this:
 
@@ -25,7 +21,9 @@ let [dice1, dice2] = ints_in_range(randomness, 1..=6);
 let double_dice = dice1 + dice2;
 ```
 
-We believe the burden of implementing drand verification once per contract or even once per blockchain is too much in an ecosystem that is preparing for thousands of independent and interconnected blockchains. Instead of executing the drand verification on the chain of the dapp, the Nois chain is acting as the randomness layer in the Cosmos ecosystem which is available via IBC.
+In an ecosystem that is getting ready for thousands of separate and connected blockchains, we think the burden of draconian verification implementation once per contract or even once per blockchain is excessive. The Noir chain, which is accessible via IBC, serves as the randomness layer in the Ethereum ecosystem rather than carrying out the random verification on the dapp's chain.
+ 
+ 
 
 ## Architecture
 
